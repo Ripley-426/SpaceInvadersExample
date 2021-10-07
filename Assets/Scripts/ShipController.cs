@@ -7,15 +7,15 @@ public class ShipController : MonoBehaviour
 {
     [SerializeField] private new Rigidbody2D rigidbody;
     [SerializeField] private float speed = 1f;
-    [SerializeField] private float movementMultiplier = 5f;
     
-    private Vector2 _movement;
     private Vector2 _position;
+    private Translator _trans;
 
     public Vector2 realSpeed;
 
     private void Awake()
     {
+        _trans = gameObject.AddComponent<Translator>();
         _position = transform.position;
         SetRandomXPosition();
     }
@@ -23,13 +23,8 @@ public class ShipController : MonoBehaviour
     private void Update()
     {
         float moveHorizontal = Input.GetAxis("Horizontal");
-        _movement = new Vector2(moveHorizontal, 0f);
-    }
-
-    private void FixedUpdate()
-    {
-        realSpeed = _movement * speed * movementMultiplier;
-        rigidbody.AddForce(_movement * speed * movementMultiplier);
+        float moveVertical = Input.GetAxis("Vertical");
+        _trans.Move(new Vector2(moveHorizontal, moveVertical) * speed);
     }
 
     private void SetRandomXPosition()

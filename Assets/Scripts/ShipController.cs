@@ -11,8 +11,6 @@ public class ShipController : MonoBehaviour
     private Vector2 _position;
     private Translator _trans;
 
-    public Vector2 realSpeed;
-
     private void Awake()
     {
         _trans = gameObject.AddComponent<Translator>();

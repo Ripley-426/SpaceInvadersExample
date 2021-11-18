@@ -1315,6 +1315,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 190630068548988262, guid: e1f4ce36517248c4da46974d5322a8e8,
         type: 3}
+      propertyPath: bullet
+      value: 
+      objectReference: {fileID: 6267192188392884856, guid: 7ad934db6a2519c4da9a8e9fa22259ac,
+        type: 3}
+    - target: {fileID: 190630068548988262, guid: e1f4ce36517248c4da46974d5322a8e8,
+        type: 3}
       propertyPath: audioSource
       value: 
       objectReference: {fileID: 691795296}

@@ -9,6 +9,7 @@ public class ShipController : MonoBehaviour
     [SerializeField] private float speed = 1f;
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private AudioClip shootingSound;
+    [SerializeField] private GameObject bullet;
     
     private Vector2 _position;
     private Translator _trans;
@@ -41,6 +42,7 @@ public class ShipController : MonoBehaviour
             return;
         }
         if (!Input.GetKey(KeyCode.Space)) return;
+        Instantiate(bullet, transform.position, Quaternion.identity);
         _currentTime = 0;
         audioSource.PlayOneShot(shootingSound);
     }
